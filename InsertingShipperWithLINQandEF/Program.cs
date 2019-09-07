@@ -56,14 +56,23 @@ namespace InsertingShipperWithLINQandEF
 
         private static void InsertShipper()
         {
-            //Shipper s = new Shipper();
+            Shipper s = new Shipper();
 
             Console.Clear();
 
             Console.WriteLine("++++++++++ NORTHWIND'S SHIPPERS ++++++++++");
             Console.WriteLine();
 
-            Console.WriteLine("Please, insert new shipper here...");
+            Console.WriteLine("Name Company:");
+            s.CompanyName = Console.ReadLine();
+
+            Console.WriteLine("Phone:");
+            s.Phone = Console.ReadLine();
+
+            int IdGenerated = dShippers.InsertShipper(s);
+
+            Console.WriteLine();
+            Console.WriteLine("ID generated: " + IdGenerated);
             Console.ReadKey();
         }
     }
